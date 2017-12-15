@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    auth:
+      path: /auth/**
+      sensitiveHeaders:
+      serviceId: auth-service
+      stripPrefix: true
+    api:
+      path: /api/**
+      sensitiveHeaders:
+      serviceId: api-service
+      stripPrefix: true
+
+  ribbon:
+    eureka:
+      enabled: true
+  ignored-services: "*"
+
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      default-zone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: zuul
+
