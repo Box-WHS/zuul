@@ -18,6 +18,8 @@ zuul:
     eureka:
       enabled: true
   ignored-services: "*"
+  host:
+    socket-timeout-millis: 5000
 
 
 eureka:
