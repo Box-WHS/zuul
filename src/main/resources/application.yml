@@ -33,3 +33,12 @@ spring:
   application:
     name: zuul
 
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreashold: 50
+      execution:
+        timeout:
+          enabled: false
+
