@@ -37,7 +37,8 @@ hystrix:
   command:
     default:
       circuitBreaker:
-        requestVolumeThreashold: 50
+        # requestVolumeThreashold: 50
+        enabled: false
       execution:
         timeout:
           enabled: false
